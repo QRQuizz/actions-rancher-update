@@ -27,7 +27,7 @@ async function main() {
   const STACK_NAME = core.getInput('stack_name', { required: true });
   const SERVICE_NAME = core.getInput('service_name', { required: true });
   const DOCKER_IMAGE = core.getInput('docker_image', { required: true });
- 
+
   const rancherApi = request.defaults({
     baseUrl: `${RANCHER_URL}/v2-beta/projects/${PROJECT_ID}`,
     auth: {
@@ -76,3 +76,5 @@ function handleError(err) {
   console.log(err);
   core.setFailed(err.message);
 }
+
+
